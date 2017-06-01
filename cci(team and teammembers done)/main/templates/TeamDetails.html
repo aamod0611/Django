@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="Team-Details-info">
+		<div class="container-fluid">
+        <h2>Team Information</h2>
+		</div>
+    </div>
+    <div class="container-fluid space">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>TeamName:   {{TeamsDetail.TeamName}}  </h4>
+            </div>
+	        <div class="col-sm-6">
+	            <h4>TeamLead:   {{TeamsDetail.TeamLead}}   </h4>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-sm-6">
+    <h4>ClientName:   {{TeamsDetail.ClientName}}   </h4>
+            </div>
+                <div class="col-sm-6">
+    <h4>Tech:   {{TeamsDetail.Tech}}   </h4>
+                </div>
+         </div>
+    </div>
+  <div class="Team-Details-info">
+		<div class="container-fluid">
+        <h2>Team-Members</h2>
+		</div>
+    </div>
+{% if All_TeamMembers %}
+	<ul>
+		{% for AllTeams in All_TeamMembers %}
+
+
+			<div class="row">
+                 <div class="space">
+                <div class="col-sm-12">
+		<div class="profile">
+        <a href="{% url 'main:TeamMemberDetails' AllTeams.id %}">{{AllTeams.Name}}</a>
+		<form action="{% url 'main:Teams-delete' AllTeams.id %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+         </form>
+         </div>
+        </div>
+                 </div>
+		</div>
+
+	{% endfor %}
+	</ul>
+{% else %}
+	<h3>you don't have any Team Members</h3>
+{% endif %}
+
+
+  </div>
+{% endblock %}
+

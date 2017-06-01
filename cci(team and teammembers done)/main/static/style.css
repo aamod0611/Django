@@ -1,0 +1,92 @@
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0px;
+}
+.indform{
+        text-align: center;
+}
+.indpic img {
+    height: 200px;
+    width: 100%;
+}
+.mid{
+text-align: center;
+}
+
+.Team-Details-info{
+ background: url("images/bg.gif");
+    padding: 1px;
+background-color: wheat;
+}
+
+.space{
+padding-top: 20px;
+}
+.del-btn{
+    float: right;
+    margin-right: 56px;
+}
+.navbar-inverse {
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: black;
+}
+h2{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #9EB929;
+    }
+    .navbar-inverse .navbar-brand {
+    color: #9EB929;
+}
+.thumbnail {
+    background-color: whitesmoke;
+    }
+
+    a:focus, a:hover {
+    color: #9EB929;
+    }
+    a {
+    color: black;
+    }
+
+.group-form-space{
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-right: 650px;
+    background-color: whitesmoke;
+    padding-left: 40px;
+    }
+.grp-btn{
+margin-top: 20px;
+}
+.teamMember-del{
+float: right;
+}
+
+.upd-btn{
+float: right;
+margin-top: -34px;
+margin-right: 140px;
+}
+.teamMember-upd{
+margin-left: 87px;
+margin-top: -13px;
+}
+.group-del{
+float: right;
+margin-top: -20px;
+}
+.group-upd{
+float: right;
+margin-top: -34px;
+margin-right: 45px;
+}
+.navbar-inverse .navbar-brand:hover {
+    color: #9EB929;
+}

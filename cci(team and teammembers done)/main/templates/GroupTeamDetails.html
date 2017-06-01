@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+asafdfsddsfdsg
+<div class="Team-Details-info">
+        <h2>Teams</h2>
+    </div>
+{% if GroupTeams %}
+	<ul>
+		{% for AllTeams in GroupTeams %}
+
+fdsgsfdgsdfgsg
+			<div class="row">
+                <div class="col-sm-12">
+		<div class="profile">
+       <h2> <a href="{% url 'main:GroupTeamDetails' AllTeams.id %}">{{AllTeams.TeamName}}</a></h2>
+         </div>
+        </div>
+
+		</div>
+
+	{% endfor %}
+	</ul>
+{% else %}
+	<h3>you don't have any album</h3>
+{% endif %}
+
+
+  </div>
+{% endblock %}

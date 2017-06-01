@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+<div class="Container">
+	<div class="row">
+{% block body %}
+
+		 <div class="Team-Details-info">
+		<div class="container-fluid">
+        <h2>Team-Members</h2>
+		</div>
+    </div>
+{% if all_album %}
+	<ul>
+		{% for TeamMembers in all_album %}
+
+		<!-- details -->
+			<!-- <li><a href="/music/{{album.id}}">{{album.title}}</a></li> -->
+
+			<div class="col-sm-2 indpic">
+				<div class="space">
+				<div class="thumbnail">
+		<img src="{{TeamMembers.Pic.url}}"><br>
+		 <a href="{% url 'main:details' TeamMembers.id %}">{{TeamMembers.Name}}</a>
+		<form class="indform" action="{% url 'main:TeamMember-delete' TeamMembers.id  %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+
+			<button class="teamMember-del" type="submit">
+				<span class="glyphicon glyphicon-trash"></span>
+			</button>
+         </form>
+
+		<form class="indform" action="{% url 'main:TeamMember-update' TeamMembers.id  %}" method="get" enctype="multipart/form-data">
+			{% csrf_token %}
+			<button class="teamMember-upd" type="submit">
+				<span class="glyphicon glyphicon-pencil"></span>
+			</button>
+         </form>
+
+        </div>
+		 </div>
+			</div>
+	{% endfor %}
+	</ul>
+{% else %}
+	<h3>you don't have any Team Members</h3>
+{% endif %}
+{% endblock %}
+			</div>
+</div>

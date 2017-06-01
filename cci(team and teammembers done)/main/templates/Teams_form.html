@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div class="container">
+		<div class="row">
+			<div class="group-form-space">
+	{% include 'Team_form.html' %}
+	<button class="grp-btn" type="submit">submit</button>
+			</div>
+		</div>
+	</div>
+</form>
+{% endblock %}

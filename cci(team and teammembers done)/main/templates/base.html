@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Creative Capsule Infotech</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'main:index' %}">Creative Capsule</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="">
+		 <a href="{% url 'main:index' %}"><span class="glyphicon glyphicon-man" aria-hidden="true"></span>Team-Members
+		 </a>
+		</li>
+        <li class="dropdown">
+          <a href="{% url 'main:AllTeams' %}"><span class="glyphicon glyphicon" aria-hidden="true"></span>Teams
+		  </a>
+        </li>
+          <li class="dropdown">
+          <a href="{% url 'main:GroupDetails' %}"><span class="glyphicon glyphicon" aria-hidden="true"></span>Groups
+		  </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'main:Groups' %}"><span class="glyphicon glyphicon-plus"></span> Add Groups</a></li>
+        <li><a href="{% url 'main:TeamMember' %}"><span class="glyphicon glyphicon-plus"></span> Add Team-Member</a></li>
+        <li><a href="{% url 'main:Teams' %}"><span class="glyphicon glyphicon-plus"></span> Add Teams</a></li>
+        <li><a href="{% url 'main:register' %}"><span class="glyphicon glyphicon-log-off"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% block body %}
+{% endblock %}
+</body>
+</html>

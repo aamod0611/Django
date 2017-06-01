@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+ <div class="Team-Details-info">
+		<div class="container-fluid">
+        <h2>Groups</h2>
+		</div>
+    </div>
+
+{% if GroupsDetail %}
+	<ul>
+		{% for TeamMembers in GroupsDetail %}
+
+		<!-- details -->
+			<!-- <li><a href="/music/{{album.id}}">{{album.title}}</a></li> -->
+
+			<div class="col-sm-4 indpic">
+				<div class="space">
+				<div class="thumbnail">
+                     <a href="{% url 'main:GroupTeamDetails' TeamMembers.id %}">{{TeamMembers.GroupName}}</a>
+			<form class="" action="{% url 'main:Group-delete' TeamMembers.id  %}" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+					<button class="group-del" type="submit">
+						<span class="glyphicon glyphicon-trash"></span>
+					</button>
+        	 </form>
+					<form class="" action="{% url 'main:Group-update' TeamMembers.id  %}" method="get" enctype="multipart/form-data">
+				{% csrf_token %}
+					<button class="group-upd" type="submit">
+						<span class="glyphicon glyphicon-pencil"></span>
+					</button>
+        	 </form>
+</div>
+        </div>
+		 </div>
+	{% endfor %}
+	</ul>
+{% else %}
+	<h3>you don't have any Groups</h3>
+{% endif %}
+{% endblock %}
+

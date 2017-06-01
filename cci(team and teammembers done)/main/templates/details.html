@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<div class="Container">
+	<div class="row">
+{% block body %}
+<div class="col-sm-4 mid">
+    <div class="thumbnail">
+<img src="{{TeamMembers.Pic.url}}">
+
+	<h4>Name:{{TeamMembers.Name}}</h4>
+	<h4>Designation:{{TeamMembers.Designation}}</h4>
+    <h4>Date-of-Birth:{{TeamMembers.DOB}}</h4>
+    <h4>Team:{{TeamMembers.Team}}</h4>
+            </div>
+</div>
+
+{% endblock %}
+    </div>
+</div>

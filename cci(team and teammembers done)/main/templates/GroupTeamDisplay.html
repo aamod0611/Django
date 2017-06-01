@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+ <div class="Team-Details-info">
+		<div class="container-fluid">
+        <h2>Teams</h2>
+		</div>
+    </div>
+{% if GroupTeams %}
+	<ul>
+		{% for AllTeams in GroupTeams %}
+
+
+			<div class="row">
+				<div class="space">
+                <div class="col-sm-12">
+		<div class="profile">
+			<form action="{% url 'main:Teams-delete' AllTeams.id %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="ca">
+        <a href="{% url 'main:TeamDetails' AllTeams.id %}">{{AllTeams.TeamName}}</a>
+
+				<button class="del-btn" type="submit">
+				Delete
+			</button>
+				</div>
+			</form>
+			</form>
+			<form action="{% url 'main:Team-update' AllTeams.id %}" method="get" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="ca">
+			<button class="upd-btn" type="submit" >
+				Update
+			</button>
+				</div>
+          </form>
+
+         </div>
+        </div>
+		</div>
+		</div>
+
+	{% endfor %}
+	</ul>
+{% else %}
+	<h3>you don't have any Teams</h3>
+{% endif %}
+{% endblock %}
